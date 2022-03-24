@@ -1,0 +1,17 @@
+# git
+.gitignore
+
+# docker
+.dockerignore
+Dockerfile*
+
+# scripts
+Psakefile.ps1
+
+# folders
+ignore
+# public keys
+#install/PEXDEXuser/*.*/.ssh/id_rsa
+**/id_rsa
+# development
+# install
