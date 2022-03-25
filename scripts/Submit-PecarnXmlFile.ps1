@@ -41,7 +41,7 @@ function Submit-PecarnXmlFile {
 
     Push-Location -Path $PexDexDirectory
 
-    $Command = "java ""-Dproperties.dir=C:\Program Files\PEXDEX"" -jar .\CLI\pexdexCLI.jar --spring.profiles.active=error --submit --siteid $siteid --file $xmlPath --study $study"
+    $Command = "java ""-Dproperties.dir=C:\Program Files\PEXDEX"" -jar .\CLI\pexdexCLI.jar --spring.profiles.active=error --submit --siteid $siteid --study $study --file $xmlPath"
     Write-Debug "Command: $Command"
 
     if ($PSCmdlet.ShouldProcess("$siteid/$email",'register'))
