@@ -12,11 +12,13 @@ Remove-Item .\install -Recurse -ErrorAction:Ignore
 
 # copy the application's file, including the Java and Perl (strawberry) runtimes to the install directory.
 Copy-Item -Path 'C:\Program Files\PEXDEX' -Destination .\install\PEXDEX -Recurse
+# copy the de-identification script
+Copy-Item -Path "$env:APPDATA\pexdex\perl" -Destination .\install\PEXDEX\deid -Recurse
 ```
 
 ## Build
 
-Copies PexDex and its dependencies to the image.
+Copies PexDex and its dependencies to the image.  The instructions for building the image are contained in the `Dockerfile`.
 
 ```powershell
  docker build --tag pexdex:latest .
@@ -154,6 +156,8 @@ Import-Module psake
 # lists all tasks
 invoke-psake -docs
 ```
+
+> NOTE: the tasks are contained by `Psakefile.ps1`.
 
 ## pexdexCLI
 
