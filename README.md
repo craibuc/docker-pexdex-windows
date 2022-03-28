@@ -48,12 +48,11 @@ Switch|Meaning
 Registers an email address with a site.
 
 ```powershell
-docker run -it --rm -v "$( $env:APPDATA )\pexdex:c:\app\user" pexdex:latest --register --siteid <value> --study [registry|pedscreen] --email <value>
+docker run --rm -v "$( $env:APPDATA )\pexdex:c:\app\user" pexdex:latest --register --siteid <value> --study [registry|pedscreen] --email <value>
 ```
 
 Switch|Meaning
 ---|---
-`-it`|interactive terminal
 `--rm`|delete the container when the session ends
 `-v`|bind mount the `pexdex` directory in the user's profile folder to `c:\app\user` in the container
 `pexdex:latest`|create a container based on the image with this tag
@@ -66,12 +65,11 @@ Switch|Meaning
 Confirms the restration.
 
 ```powershell
-docker run -it --rm -v "$( $env:APPDATA )\pexdex:c:\app\user" pexdex:latest --confirmregister --siteid <value> --study [registry|pedscreen] --pin <value> --publickey <value>
+docker run --rm -v "$( $env:APPDATA )\pexdex:c:\app\user" pexdex:latest --confirmregister --siteid <value> --study [registry|pedscreen] --pin <value> --publickey <value>
 ```
 
 Switch|Meaning
 ---|---
-`-it`|interactive terminal
 `--rm`|delete the container when the session ends
 `-v`|bind mount the `pexdex` directory in the user's profile folder to `c:\app\user` in the container
 `pexdex:latest`|create a container based on the image with this tag
@@ -85,12 +83,11 @@ Switch|Meaning
 Compares the XML with the schema (XSD).
 
 ```powershell
-docker run -it --rm -v "$( $env:APPDATA )\pexdex:c:\app\user" -v "$( $env:USERPROFILE )\output:c:\app\output" pexdex:latest --validate --siteid <value> --study [registry|pedscreen] --file <path>
+docker run --rm -v "$( $env:APPDATA )\pexdex:c:\app\user" -v "$( $env:USERPROFILE )\output:c:\app\output" pexdex:latest --validate --siteid <value> --study [registry|pedscreen] --file <path>
 ```
 
 Switch|Meaning
 ---|---
-`-it`|interactive terminal
 `--rm`|delete the container when the session ends
 `-v`|bind mount the `pexdex` directory in the user's profile folder to `c:\app\user` in the container
 `-v`|bind mount the `output` directory in the user's profile folder to `c:\app\output` in the container
@@ -104,12 +101,11 @@ Switch|Meaning
 Removes protected-health information (PHI) from the XML.
 
 ```powershell
-docker run -it --rm -v "$( $env:APPDATA )\pexdex:c:\app\user" -v "$( $env:USERPROFILE )\output:c:\app\output" pexdex:latest --deidentify --siteid <value> --study [registry|pedscreen] --submissiontype [0|1] --file <path> --pidtxt <path>
+docker run --rm -v "$( $env:APPDATA )\pexdex:c:\app\user" -v "$( $env:USERPROFILE )\output:c:\app\output" pexdex:latest --deidentify --siteid <value> --study [registry|pedscreen] --submissiontype [0|1] --file <path> --pidtxt <path>
 ```
 
 Switch|Meaning
 ---|---
-`-it`|interactive terminal
 `--rm`|delete the container when the session ends
 `-v`|bind mount the `pexdex` directory in the user's profile folder to `c:\app\user` in the container
 `-v`|bind mount the `output` directory in the user's profile folder to `c:\app\output` in the container
@@ -124,12 +120,11 @@ Switch|Meaning
 Submits the XML to the DCC.
 
 ```powershell
-docker run -it --rm -v "$( $env:APPDATA )\pexdex:c:\app\user" -v "$( $env:USERPROFILE )\output:c:\app\output" pexdex:latest --submit --siteid <value> --study [registry|pedscreen] --file <path>
+docker run --rm -v "$( $env:APPDATA )\pexdex:c:\app\user" -v "$( $env:USERPROFILE )\output:c:\app\output" pexdex:latest --submit --siteid <value> --study [registry|pedscreen] --file <path>
 ```
 
 Switch|Meaning
 ---|---
-`-it`|interactive terminal
 `--rm`|delete the container when the session ends
 `-v`|bind mount the `pexdex` directory in the user's profile folder to `c:\app\user` in the container
 `-v`|bind mount the `output` directory in the user's profile folder to `c:\app\output` in the container
